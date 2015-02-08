@@ -68,7 +68,7 @@ public class SyncScheduler implements SynchronousScheduler {
      * the Services Manager.</p>
      */
     private SyncScheduler() {
-        this.schedulerHelper = new SchedulerHelper(Task.TaskSynchroncity.SYNCHRONOUS);
+        this.schedulerHelper = new SchedulerHelper(ScheduledTask.TaskSynchroncity.SYNCHRONOUS);
     }
 
     @Override
@@ -232,7 +232,7 @@ public class SyncScheduler implements SynchronousScheduler {
         final long NODELAY = 0L;
         final long NOPERIOD = 0L;
 
-        Task.TaskSynchroncity syncType = Task.TaskSynchroncity.SYNCHRONOUS;
+        ScheduledTask.TaskSynchroncity syncType = ScheduledTask.TaskSynchroncity.SYNCHRONOUS;
         ScheduledTask nonRepeatingTask = this.schedulerHelper.taskValidationStep(plugin, runnableTarget, NODELAY, NOPERIOD);
 
         if (nonRepeatingTask == null) {
@@ -276,7 +276,7 @@ public class SyncScheduler implements SynchronousScheduler {
         Optional<Task> resultTask = Optional.absent();
         final long NOPERIOD = 0L;
 
-        Task.TaskSynchroncity syncType = Task.TaskSynchroncity.SYNCHRONOUS;
+        ScheduledTask.TaskSynchroncity syncType = ScheduledTask.TaskSynchroncity.SYNCHRONOUS;
         ScheduledTask nonRepeatingTask = this.schedulerHelper.taskValidationStep(plugin, runnableTarget, delay, NOPERIOD);
 
         if (nonRepeatingTask == null) {
@@ -330,7 +330,7 @@ public class SyncScheduler implements SynchronousScheduler {
         Optional<Task> resultTask = Optional.absent();
         final long NODELAY = 0L;
 
-        Task.TaskSynchroncity syncType = Task.TaskSynchroncity.SYNCHRONOUS;
+        ScheduledTask.TaskSynchroncity syncType = ScheduledTask.TaskSynchroncity.SYNCHRONOUS;
         ScheduledTask repeatingTask = this.schedulerHelper.taskValidationStep(plugin, runnableTarget, NODELAY, interval);
 
         if (repeatingTask == null) {
@@ -385,7 +385,8 @@ public class SyncScheduler implements SynchronousScheduler {
     @Override
     public Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable runnableTarget, long interval, long delay) {
         Optional<Task> resultTask = Optional.absent();
-        Task.TaskSynchroncity syncType = Task.TaskSynchroncity.SYNCHRONOUS;
+
+        ScheduledTask.TaskSynchroncity syncType = ScheduledTask.TaskSynchroncity.SYNCHRONOUS;
         ScheduledTask repeatingTask = this.schedulerHelper.taskValidationStep(plugin, runnableTarget, delay, interval);
 
         if (repeatingTask == null) {

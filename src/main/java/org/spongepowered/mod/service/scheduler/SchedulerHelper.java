@@ -40,12 +40,12 @@ import java.util.regex.Pattern;
 public class SchedulerHelper {
 
     private long sequenceNumber = 0L;
-    private Task.TaskSynchroncity syncType;
+    private ScheduledTask.TaskSynchroncity syncType;
 
     @SuppressWarnings("unused")
     private SchedulerHelper() {}
 
-    protected SchedulerHelper(Task.TaskSynchroncity syncType) {
+    protected SchedulerHelper(ScheduledTask.TaskSynchroncity syncType) {
         this.syncType = syncType;
     }
 

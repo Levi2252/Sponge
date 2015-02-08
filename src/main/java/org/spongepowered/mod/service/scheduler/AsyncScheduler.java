@@ -92,7 +92,7 @@ public class AsyncScheduler implements AsynchronousScheduler {
     private SchedulerHelper schedulerHelper;
 
     private AsyncScheduler() {
-        this.schedulerHelper = new SchedulerHelper(Task.TaskSynchroncity.ASYNCHRONOUS);
+        this.schedulerHelper = new SchedulerHelper(ScheduledTask.TaskSynchroncity.ASYNCHRONOUS);
 
         new Thread(new Runnable() {
             @Override

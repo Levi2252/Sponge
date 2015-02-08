@@ -44,7 +44,7 @@ public class ScheduledTask implements Task {
     protected ScheduledTaskState state;
     protected UUID id;
     protected String name;
-    protected Task.TaskSynchroncity syncType;
+    protected TaskSynchroncity syncType;
 
     // Internal Task state. Not for user-service use.
     public enum ScheduledTaskState {
@@ -60,7 +60,7 @@ public class ScheduledTask implements Task {
     }
 
     // This c'tor is OK for internal Sponge use. APIs do not expose the c'tor.
-    protected ScheduledTask(long x, long t,  Task.TaskSynchroncity syncType) {
+    protected ScheduledTask(long x, long t,  TaskSynchroncity syncType) {
         // All tasks begin waiting.
         this.state = ScheduledTaskState.WAITING;
 
@@ -190,5 +190,10 @@ public class ScheduledTask implements Task {
     public String setName(String name) {
 
         return name;
+    }
+
+    public enum TaskSynchroncity {
+        SYNCHRONOUS,
+        ASYNCHRONOUS
     }
 }

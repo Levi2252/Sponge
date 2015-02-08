@@ -142,7 +142,7 @@ public abstract class MixinWorld implements World, IMixinWorld {
     }
 
     @Override
-    public UUID getUniqueID() {
+    public UUID getUniqueId() {
         throw new UnsupportedOperationException();
     }
 
@@ -402,7 +402,7 @@ public abstract class MixinWorld implements World, IMixinWorld {
     }
 
     @Override
-    public Optional<Entity> getEntityFromUUID(UUID uuid) {
+    public Optional<Entity> getEntity(UUID uuid) {
         if ((Object) this instanceof WorldServer) {
             // TODO Should this be done in an override in a WorldServer mixin?
             return Optional.fromNullable((Entity) ((WorldServer) (Object) this).getEntityFromUuid(uuid));

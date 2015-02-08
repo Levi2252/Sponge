@@ -219,7 +219,7 @@ public class CommandSponge extends CommandBase {
 
                 } else if ("version".equalsIgnoreCase(command)) {
                     sender.addChatMessage(new ChatComponentText("SpongeMod : " + EnumChatFormatting.GREEN + SpongeMod.instance.getGame().getImplementationVersion() + "\n" +
-                                                                "SpongeAPI : " + EnumChatFormatting.GREEN + SpongeMod.instance.getGame().getAPIVersion()));
+                                                                "SpongeAPI : " + EnumChatFormatting.GREEN + SpongeMod.instance.getGame().getApiVersion()));
                 } else if (command.equalsIgnoreCase("heap")) {
                     processHeap(sender, args);
                 } else if (command.equalsIgnoreCase("help")) {
